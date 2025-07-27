@@ -3,11 +3,23 @@ on:
   workflow_dispatch:
 jobs:
   firstjob:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: firstJob script
         shell: bash
         run: echo Hello World! This is the first job
+        
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        
+      - name: Print to Log
+        id: print-to-log
+        uses: actions/hello-world-javascript-action@main
+        with:
+          who-to-greet: ${{ github.actor }}
+      - name: time
+        run: |
+          echo "The time of the greeting was at: ${{ steps.print-to-log.outputs.time }}"
 
   secondjob:
      runs-on: ubuntu-latest
