@@ -22,7 +22,7 @@ export const UploadImageCard: FC<UploadImageCardProps> = ({ memoryTitle, isLoadi
       data-testid="upload-image-card"
     >
       {isLoading && <Overlay />}
-      <div className="relative h-4/6">
+      <div className="relative h-72 lg:h-4/6">
         {match(imageId)
           .with(P.string, (it) => (
             <CldImage
@@ -43,7 +43,7 @@ export const UploadImageCard: FC<UploadImageCardProps> = ({ memoryTitle, isLoadi
           ))
           .exhaustive()}
       </div>
-      <div className="mt-10 text-center font-permanent_marker text-3xl">{memoryTitle}</div>
+      <div className="my-4 lg:my-10 text-center font-permanent_marker text-3xl">{memoryTitle}</div>
       <CldUploadButton
         uploadPreset="ml_default"
         className="mt-auto tracking-wide font-semibold bg-indigo-400 text-gray-100 py-3 rounded-lg hover:bg-indigo-600 transition-all duration-300 ease-in-out focus:shadow-outline focus:outline-none"

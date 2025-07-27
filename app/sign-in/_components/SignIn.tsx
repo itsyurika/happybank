@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import { demoUserEmail, demoUserPassword } from '../../../test-helper/demoUser';
 import { Button } from '../../_shared/_components/Button';
 import { GoogleLogo } from '../../_shared/_components/icons/GoogleLogo';
+import { HappyBankHeartLogo } from '../../_shared/_components/icons/HappyBankHeartLogo';
 import { HappyBankLogo } from '../../_shared/_components/icons/HappyBankLogo';
 
 const SignIn: React.FC = () => {
@@ -21,24 +22,31 @@ const SignIn: React.FC = () => {
     <div className="bg-gray-100 text-gray-900 flex justify-center">
       <div className="m-0 bg-white shadow sm:rounded-lg flex justify-center flex-1">
         <div className="flex-1 bg-indigo-100 text-center hidden lg:flex">
-          <div className="w-full bg-contain bg-center bg-no-repeat bg-cover bg-login-image" />
+          <div className="w-full bg-center bg-no-repeat bg-cover bg-login-image" />
         </div>
-        <div className="h-screen flex p-6 sm:p-12 lg:w-1/2">
-          <div className="flex flex-col items-center inline-block align-middle w-full m-auto">
-            <HappyBankLogo />
-            <h2 className="mt-8 text-center">Welcome to Happy bank!</h2>
+        <div className="h-screen w-full flex p-6 sm:p-12 lg:w-1/2">
+          <div className="flex flex-col items-center align-middle w-full m-auto">
+            <div className="hidden h-lg:block">
+              <HappyBankLogo />
+            </div>
+            <div className="flex gap-4 mt-8">
+              <div className="block h-lg:hidden">
+                <HappyBankHeartLogo />
+              </div>
+              <h2 className="text-center h-sm:text-xl h-md:text-xl">Welcome to Happy bank!</h2>
+            </div>
             <div className="max-w-lg w-full flex-1 mt-8">
               <div className="flex flex-col items-center w-3/4 m-auto">
                 <button
                   type="button"
                   onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
-                  className="w-full inline-flex items-center justify-center py-4 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:ring-4 focus:ring-gray-200"
+                  className="w-full inline-flex items-center justify-center py-4 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:ring-4 focus:ring-gray-200"
                 >
                   <GoogleLogo />
                   Continue with Google
                 </button>
 
-                <div className="w-full mt-6 mb-12 border-b text-center">
+                <div className="w-full mb-6 mt-2 h-lg:mt-6 h-lg:mb-12 border-b text-center">
                   <div className="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
                     Or
                   </div>
@@ -86,7 +94,7 @@ const SignIn: React.FC = () => {
                       Password
                     </label>
                   </div>
-                  <Button type="submit" label="Sign in" cssWrapper="w-full mt-12 lg:mt-16" />
+                  <Button type="submit" label="Sign in" cssWrapper="w-full mt-8 h-lg:mt-16" />
                 </form>
 
                 <p className="mt-6 text-xs text-gray-600 text-center">
@@ -100,7 +108,7 @@ const SignIn: React.FC = () => {
                 <Button
                   type="button"
                   label="Try as a demo user"
-                  cssWrapper="mt-8 lg:mt-16 bg-transparent text-s text-indigo-500 text-cente outline-none hover:bg-transparent hover:text-red-500"
+                  cssWrapper="mt-8 h-lg:mt-16 bg-transparent text-s text-indigo-500 text-center outline-none hover:bg-transparent hover:text-red-500"
                   onClick={inputDemoUser}
                 />
               </div>

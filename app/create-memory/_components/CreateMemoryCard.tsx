@@ -66,7 +66,7 @@ export const CreateMemoryCard: FC<CreateMemoryCardProps> = ({ isLoading }) => {
           <input
             type="text"
             id="memory-hashtag"
-            className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 "
+            className="block w-full p-2 mb-8 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 "
             {...register('hashtag', {
               maxLength: {
                 value: 20,

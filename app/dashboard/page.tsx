@@ -13,16 +13,16 @@ const DashboardPage: React.FC = () => {
   return (
     <>
       {match(status)
-        .with('unauthenticated', () => <a href="/">Sign in</a>)
+        .with('unauthenticated', () => null)
         .with('loading', () => <FullPageSpinner />)
         .with('authenticated', () => (
           <section className="flex flex-col h-screen">
             <PageHeader />
             <Dashboard />
+            <PageFooter />
           </section>
         ))
         .exhaustive()}
-      <PageFooter />
     </>
   );
 };
